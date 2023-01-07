@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %}Tarea{{ todos.titulo }}{% endblock %}
+
+{% block 'content' %}
+<span class="btn-Aux"><a href="{% url 'todo' %}">Volver</a></span>
+<ul class='list'>
+        <li><b>Titulo:</b>{{ todos.titulo }}</li>
+        <li><b>Descripcion:</b>{{ todos.descripcion }}</li>
+        <li><b>Fecha Inicial:</b>{{ todos.fecha }}</li>
+        <li><b>Fecha Final:</b>{{ todos.fechaFinalizacion }}</li>
+        <li><b>Prioridad:</b>{{ todos.prioridad }}</li>
+</ul>
+{% endblock  %}

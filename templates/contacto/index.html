@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %}Contactos{% endblock %}
+
+{% block 'content' %}
+    <h1>Contactos</h1>
+    
+    {% include 'contacto/partials/search.html' %}
+    {% include 'contacto/partials/by_initial.html' %}
+
+    <span class="btn-Aux"><a href="{% url 'contacto' %}">Ver Todos</a><a href="{% url 'contacto_create' %}">Agregar</a></span>
+    <ul class='list'>
+        {% for contacto in contactos %}
+            <li>{{ contacto }}
+                <span>
+                    <a href="{% url 'contacto_view' id=contacto.id %}" class="btn btn-Ver">Ver</a>
+                    <a href="{% url 'contacto_edit' id=contacto.id %}" class="btn btn-Editar">Editar</a>
+                    <a href="{% url 'contacto_delete' id=contacto.id %}" class="btn btn-Borrar">Borrar</a>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock  %}
