@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Agenda</title>
-</head>
-<body>
-  <p>Lorem ipsum</p>
-</body>
-</html>
+{% extends 'layout/base.html' %}
+{% block 'title' %}Inicio{% endblock %}
+{% block 'content' %}
+    <h1>Bienvenido a tu gestor personal</h1>
+    <div class="cards">
+            <a href="{% url 'contacto' %}" class="card">CONTACTOS</a>
+            <a href="{% url 'todo' %}" class="card">TAREAS</a>
+    </div>
+{% endblock %}
